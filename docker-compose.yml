@@ -2,9 +2,9 @@ version: "3"
 
 services:
   redis-compose:
-    image: redis
-    command: redis-server --requirepass root --appendonly yes
-    hostname: redis
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "6379:6379"
     volumes:
